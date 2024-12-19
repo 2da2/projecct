@@ -1,0 +1,608 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+}
+
+header{
+    border-bottom: #c8c8c8 1px solid;
+    background-color: #ffffff;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px; /* Matches your header height */
+    z-index: 1000;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    height: 80px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; 
+    align-items: center;    
+}
+.menuA, .menuB {
+    display: flex;
+}
+
+.toggle-menu{
+    max-width: 1200px;
+    margin-left: auto;
+}
+
+.menu img {
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+header a{
+    padding-right: 28px;
+    font-family: "Koh Santepheap" ;
+    font-size: 18px;
+}
+header a:hover{
+    color: #c0c0c0;
+}
+
+aside {
+    position: fixed;
+    top: 80px;
+    height: 300px;
+    width: 100vw;
+    background-color: #f8f8f8; 
+    transform: translateY(-300px);
+    transition: transform 0.3s ease-in-out; 
+    z-index: 999; 
+}
+aside.open {
+    transform: translateY(0);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 998;
+}
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+nav {
+    padding-bottom: 8px;
+    padding-top: 80px; 
+    max-width: 1200px;
+    margin: 8px auto; 
+    font-size: 14px;
+
+    border-bottom: #c8c8c8 1px solid;
+} 
+
+main{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section{
+    padding-bottom: 100px;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+.left{
+    width: 50%;
+    display: flex; /* 썸네일과 메인 이미지를 가로로 배치 */
+    gap: 24px;
+    align-items: flex-start; /* 세로 정렬 상단 맞춤 */
+}
+
+.thumbnail-container {
+    display: flex;
+    flex-direction: column; /* 썸네일 세로 배치 */
+    gap: 16px;
+  }
+  
+  .thumbnail {
+    width: 78px;
+    height: 78px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: opacity 0.2s, border 0.2s;
+  }
+  .thumbnail.unselected {
+    opacity: 0.5;
+  }
+  .thumbnail.selected {
+    opacity: 1; 
+  }
+  
+  .main-image {
+    width: 486px;
+    height: auto;
+    border: 1px solid #ddd;
+    object-fit: cover;
+  }
+  
+
+
+
+
+.top-category{
+    padding-top: 12px;
+    border-radius: 20px;
+}
+.top-category p{
+    text-align: left;
+    font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+
+}
+
+
+.product-info{
+    flex-grow: 1;
+}
+.product-info h1{
+    font-size: 28px;
+    font-weight: 600;
+    padding-top: 32px;
+}
+.product-info h2{
+    font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 16px;
+}
+.product-info p{
+    padding-top: 16px;
+    text-align: left;
+}
+
+.size{
+    margin-top: 84px;
+    margin-bottom: 24px;
+    gap: 10px;
+}
+.size p{
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.size-link {
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+}
+.size-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 24px;
+    margin-top: 36px;
+    margin-bottom: 36px;
+}
+
+.button {
+    width: 50%;
+    height: 70px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.cart {
+    background-color: #fff;
+    border: solid 2px #000;
+}
+.buy {
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+
+.warp{
+    position: sticky;
+    top:80px;
+    z-index: 100;
+    background-color: #fff;
+}
+
+information {
+    padding: 10px 20px;
+}
+
+information ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+information ul .imformation-text {
+    display: inline;
+}
+information ul .imformation-text a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+} 
+information ul .imformation-text:first-child a {
+    font-weight: 700;
+}
+
+.introduction{
+    width: 95%;
+    margin: 60px auto;
+}
+.introduction h2 {
+    font-size: 24px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+    color: #333;
+}
+.introduction p{
+    padding-bottom: 10px;
+}
+.imformation-text a.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+.sent, .mood, .howTo, .know {
+    margin-bottom: 40px;
+}
+
+.sent ul, .howTo ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+
+.sent h3,h4,p{
+    text-align: center;
+}
+.sent .note-images {
+    gap: 10px; /* 이미지 간격 */
+    margin: 64px 0;
+}
+
+.note {
+    width: 100%; /* 너비를 가득 채움 */
+    height: 140px; /* 기본 높이 */
+    background-size: cover; /* 배경 이미지를 꽉 채움 */
+    background-position: center; /* 중앙 정렬 */
+    background-color: #ccc; /* 기본 배경색 */
+    border-radius: 8px; /* 둥근 모서리 */
+    margin: 10px 0;
+    filter: grayscale(100%); /* 기본 무채색 처리 */
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.note h3{
+    font-size: 24px;
+    font-family: "Koh Santepheap";
+    font-weight: 400;
+    color: #FFFFFF;
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+}
+.sent h4{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+.sent p{
+    font-size: 18px;
+}
+/* Hover 시의 스타일 */
+.note:hover {
+    height: 200px; /* 높이 증가 */
+    filter: grayscale(30%); /* 채도 활성화 */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+}
+.note:hover h3{
+    font-size: 28px;
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+.note.Fig {
+    background-image: url('https://drearth.com/wp-content/uploads/Figs-iStock-1418844327.jpg'); /* 무화과 이미지 */
+    background-size: cover;
+}
+.note.Whitetea {
+    background-image: url('https://less-saves-the-planet.com/wp-content/uploads/2023/01/149-1-1280x640.png'); /* 화이트 티 이미지 */
+}
+.note.Suede {
+    background-image: url('https://cdn.shopify.com/s/files/1/0283/3917/5496/files/the-article-content-banner-material-world-suede.jpg'); /* 스웨이드 이미지 */
+}
+.note.Cedarwood {
+    background-image: url('https://silkroadorganic.com/cdn/shop/collections/cedarwood_1600x.jpg?v=1626288736'); /* 시더우드 이미지 */
+}
+
+
+.mood {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+}
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+}
+.background-1 {
+    background: linear-gradient(to bottom, white 0%, white 100%);
+    z-index: 1;
+    opacity: 1;
+}
+.background-2 {
+    background: linear-gradient(to bottom, white 20%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 80%, white 100%), url('img/night.jpg');
+    
+    background-size: cover;
+    background-position: top;
+    z-index: 0;
+    opacity: 0; /* 초기 상태 */
+}
+
+.mood.active .background-1 {
+    opacity: 0;
+}
+.mood.active .background-2 {
+    opacity: 1;
+}
+
+.text {
+    margin-top: 120px;
+    position: relative;
+    z-index: 2;
+    color: #000;
+    transition: color 1s ease;
+}
+
+.mood.active .text {
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* 요소를 위아래로 정렬 */
+}
+.text h1, p{
+    text-align: center;
+}
+.mood h1{
+    padding-top: 100px;
+    padding-bottom: 64px;
+    font-size: 64px;
+    font-family: "Koh Santepheap";
+    font-weight: 500;
+}
+.mood p{
+    font-size: 18px;
+    line-height: 2;
+}
+.know p{
+    line-height: 2;
+}
+
+.curriculum-step p{
+    line-height: 2;
+}
+
+  /* 추천 상품 */
+  .recommend-products .product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin: 10px 0;
+  }
+  
+  .product-image1 {
+    width: 100%;
+    height: 300px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(img/pro1.jpg);
+  }
+  .product-image2 {
+    width: 100%;
+    height: 300px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(img/pro2.jpg);
+  }
+
+  .product-image3 {
+    width: 100%;
+    height: 300px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(img/pro3.jpg);
+  }
+
+  .product-image4 {
+    width: 100%;
+    height: 300px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(img/pro4.jpg);
+  }
+
+
+  
+  .product-box p {
+    font-size: 0.9rem;
+  }
+  
+  /* 리뷰 */
+  .reviews ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .reviews li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+
+
+
+
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.close-button {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button.submit-button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* 전체 푸터 스타일 */
+footer {
+    background-color: #4E4E4E;
+    color: #FFFFFF;
+    padding: 40px 20px;
+    font-family: 'Aboreto', cursive;
+}
+
+footer 
+
+/* 푸터 컨테이너 */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 로고 이미지 */
+.footer-logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* 메인 문구 스타일 */
+.footer-main-text {
+    font-family: 'Aboreto', cursive;
+    font-size: 60px;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+/* 하단 정보 */
+.footer-info {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 링크 스타일 */
+.footer-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
